@@ -1,0 +1,480 @@
+user: ~/work/p4/CONFIDENTIAL/Security/skeymaster/DEV/skeymaster_dev/v4.1/keymaster_mdfpp$ ./keymaster2_test_x86_QC --gtest_filter=*RsaAttestationOK*
+HIDL STUB: RefBase
+HIDL STUB: RefBase
+keymaster_nwd trying to open skeymaster TA
+keymaster_nwd [WRN] (nwd_helper_api.c:80) Open MDFPP keymaster version 4.3.00
+keymaster_nwd [WRN] (nwd_helper_api.c:813) build type : 
+keymaster_swd [WRN] (grdm_stubs.c:17)[secGrdm_open] Call secGrdm_open STUB function
+/hdd2/repo/y2s_r/android/external/boringssl/src/crypto/asn1/a_int.c:295:39: runtime error: unsigned integer overflow: 0 - 18446744073709551567 cannot be represented in type 'unsigned long'
+SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior /hdd2/repo/y2s_r/android/external/boringssl/src/crypto/asn1/a_int.c:295:39 in 
+keymaster_swd [DBG] (swd_verify_input.c:595)[swd_verify_input] verify cmd 15
+keymaster_swd [DBG] (swd_service.c:242)[swd_run_cb] called by PID: 16972
+keymaster_swd [DBG] (swd_service.c:244)[swd_run_cb] swd_configure() begin
+keymaster_swd [DBG] (swd_configure.c:32)[swd_configure] MDFPP keymaster version: 4.3.00
+keymaster_swd [DBG] (swd_integrity.c:173)[km_init_integrity_status] Use ICCC for Device Integrity Status
+keymaster_swd [WRN] (swd_integrity.c:207)[km_init_integrity_status] build_type->data : 
+keymaster_swd [WRN] (swd_integrity.c:227)[km_init_integrity_status] warranty bit        : 0
+keymaster_swd [WRN] (swd_integrity.c:228)[km_init_integrity_status] trust boot status   : 1
+keymaster_swd [DBG] (swd_version.c:91)[swd_hw_init_ver_lev] vl->vendor_patchlevel = 20180101, vl->boot_patchlevel = 20180101
+keymaster_swd [DBG] (swd_root_of_trust.c:136)[swd_init_bootloader_data] device_locked = 0, ROOT_OF_TRUST_API enabled
+keymaster_swd [DBG] (swd_root_of_trust.c:147)[swd_init_bootloader_data] device_locked was set to 1 by TEST_MODE
+keymaster_swd [WRN] (swd_service.c:248)[swd_run_cb] swd_configure() returns 0
+keymaster_swd [WRN] (grdm_stubs.c:23)[secGrdm_close] Call secGrdm_close STUB function
+/hdd2/repo/y2s_r/android/external/boringssl/src/crypto/asn1/asn1_lib.c:201:21: runtime error: unsigned integer overflow: 0 - 1 cannot be represented in type 'unsigned long'
+SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior /hdd2/repo/y2s_r/android/external/boringssl/src/crypto/asn1/asn1_lib.c:201:21 in 
+keymaster_nwd nwd_configure: ret 0
+keymaster_nwd successfully load skeymaster
+keymaster_nwd [WRN] (file_operations.c:130) Cannot open file: /tmp/keymaster_test_keys_QC_user/gakkeybox
+keymaster_nwd [DBG] (nwd_keymaster_tc_prov_api.c:709) No saved gak
+keymaster_swd [WRN] (grdm_stubs.c:17)[secGrdm_open] Call secGrdm_open STUB function
+keymaster_swd [DBG] (swd_verify_input.c:595)[swd_verify_input] verify cmd 40
+keymaster_swd [DBG] (swd_configure.c:25)[get_configure_status] device configure status: 1
+keymaster_swd [DBG] (swd_service.c:242)[swd_run_cb] called by PID: 16972
+keymaster_swd [DBG] (swd_service.c:244)[swd_run_cb] swd_grdm_init() begin
+keymaster_swd [WRN] (grdm_stubs.c:89)[grdm_openLogicalChannel] Call STUB grdm_openLogicalChannel function
+keymaster_swd [WRN] (grdm_stubs.c:117)[grdm_domain_putkey_init] Call grdm_domain_putkey_init STUB function
+/hdd2/repo/y2s_r/android/external/boringssl/src/crypto/fipsmodule/rand/ctrdrbg.c:163:13: runtime error: implicit conversion from type 'int' of value -16 (32-bit, signed) to type 'unsigned long' changed the value to 18446744073709551600 (64-bit, unsigned)
+SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior /hdd2/repo/y2s_r/android/external/boringssl/src/crypto/fipsmodule/rand/ctrdrbg.c:163:13 in 
+keymaster_swd [WRN] (grdm_stubs.c:106)[grdm_KM_putKey] Call grdm_KM_putkey STUB function
+keymaster_swd [WRN] (swd_grdm_init.c:64)[swd_grdm_init] GRDM authkey injected successfully
+keymaster_swd [WRN] (grdm_stubs.c:95)[grdm_closeLogicalChannel] Call STUB grdm_closeLogicalChannel function
+keymaster_swd [WRN] (swd_grdm_init.c:72)[swd_grdm_init] swd_grdm_init(0 0)
+keymaster_swd [WRN] (swd_service.c:248)[swd_run_cb] swd_grdm_init() returns 0
+keymaster_swd [WRN] (grdm_stubs.c:23)[secGrdm_close] Call secGrdm_close STUB function
+keymaster_nwd nwd_grdm_init: ret 0
+HIDL STUB: RefBase
+keymaster_nwd [DBG] (nwd_gatekeeper.cpp:246) open
+/usr/bin/../lib/gcc/x86_64-linux-gnu/7.5.0/../../../../include/c++/7.5.0/bits/basic_string.h:392:51: runtime error: unsigned integer overflow: 0 - 3 cannot be represented in type 'unsigned long'
+SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior /usr/bin/../lib/gcc/x86_64-linux-gnu/7.5.0/../../../../include/c++/7.5.0/bits/basic_string.h:392:51 in 
+Note: Google Test filter = *RsaAttestationOK*
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from Attestation
+HIDL STUB: getService
+HIDL STUB: incStrong
+HIDL STUB: getService
+HIDL STUB: incStrong
+[ RUN      ] Attestation.RsaAttestationOK
+keymaster_nwd Attestation.RsaAttestationOK
+keymaster_nwd [DBG] (nwd_gatekeeper.cpp:44) enroll start : 1
+keymaster_swd [DBG] (swd_verify_input.c:595)[swd_verify_input] verify cmd 513
+keymaster_swd [DBG] (tz_ta_gatekeeper_service.c:107)[GK_tz_process_command] =CASE TZ_TA_GK_ENROLL=
+keymaster_swd [DBG] (tz_ta_gatekeeper_process.c:778)[new_enroll] New Enroll
+keymaster_swd [DBG] (tz_ta_gatekeeper_process.c:378)[ClearFailureRecord] ClearFailureRecord start
+keymaster_swd [DBG] (tz_ta_gatekeeper_process.c:219)[WriteSecureFailureRecord] 
+keymaster_swd [DBG] (swd_blob_enc.c:39)[blob_enc_ver] obj->enc_ver = 40
+keymaster_swd [DBG] (swd_blob_enc.c:102)[blob_enc_pack] required len = 61
+/hdd2/repo/y2s_r/android/external/boringssl/src/crypto/fipsmodule/cipher/cipher.c:525:31: runtime error: implicit conversion from type 'int' of value -64 (32-bit, signed) to type 'unsigned int' changed the value to 4294967232 (32-bit, unsigned)
+SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior /hdd2/repo/y2s_r/android/external/boringssl/src/crypto/fipsmodule/cipher/cipher.c:525:31 in 
+keymaster_swd [DBG] (tz_storage.c:38)[tz_save] Trying to write 55 [FD:3]
+keymaster_swd [DBG] (tz_ta_gatekeeper_process.c:138)[WriteMemoryRecord] WriteMemoryRecord start
+keymaster_swd [DBG] (tz_ta_gatekeeper_process.c:95)[add_mem_record] Init memory record [uid:55]
+keymaster_swd [DBG] (tz_ta_gatekeeper_process.c:107)[add_mem_record] add_mem_record() ... OK
+keymaster_swd [DBG] (tz_ta_gatekeeper_process.c:552)[CreatePasswordHandle] 
+keymaster_swd [DBG] (tz_ta_gatekeeper_process.c:567)[CreatePasswordHandle] CreatePasswordHandle:: Request key... OK
+keymaster_swd [DBG] (tz_ta_gatekeeper_process.c:583)[CreatePasswordHandle] CreatePasswordHandle:: handle version 3
+keymaster_swd [DBG] (tz_ta_gatekeeper_process.c:585)[CreatePasswordHandle] CreatePasswordHandle:: salt added
+keymaster_swd [WRN] (tz_ta_gatekeeper_process.c:905)[GK_swd_enroll] GK Enroll End [0]
+keymaster_swd [DBG] (tz_ta_gatekeeper_service.c:131)[GK_tz_process_command] = END: 0 =
+keymaster_nwd [DBG] (nwd_gatekeeper.cpp:94) enroll end ret = 0
+HIDL STUB: ~return_status
+keymaster_swd [DBG] (swd_verify_input.c:595)[swd_verify_input] verify cmd 2
+keymaster_swd [DBG] (swd_configure.c:25)[get_configure_status] device configure status: 1
+keymaster_swd [DBG] (swd_service.c:242)[swd_run_cb] called by PID: 16972
+keymaster_swd [DBG] (swd_service.c:244)[swd_run_cb] swd_generate_key() begin
+keymaster_nwd [DBG] (shared_mem_asn1.c:474) skip: tag already exists: KM_TAG_PURPOSE
+keymaster_nwd [DBG] (shared_mem_asn1.c:474) skip: tag already exists: KM_TAG_PURPOSE
+/hdd2/repo/y2s_r/android/external/boringssl/src/crypto/fipsmodule/bn/gcd_extra.c:24:67: runtime error: unsigned integer overflow: 0 - 1 cannot be represented in type 'unsigned long'
+SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior /hdd2/repo/y2s_r/android/external/boringssl/src/crypto/fipsmodule/bn/gcd_extra.c:24:67 in 
+keymaster_swd [WRN] (swd_key_properties.c:86)[km_set_tag_os_version_patch_level] Warning: boot_patchlevel == 0, VTS can crash
+keymaster_swd [DBG] (swd_integrity.c:45)[swd_get_integrity_status] ret 2
+keymaster_swd [DBG] (swd_blob_enc.c:39)[blob_enc_ver] obj->enc_ver = 40
+keymaster_swd [DBG] (swd_blob_enc.c:102)[blob_enc_pack] required len = 1595
+keymaster_swd [WRN] (swd_service.c:248)[swd_run_cb] swd_generate_key() returns 0
+keymaster_nwd [WRN] (params_log.c:113) KEY_PARAMS: KM_ALGORITHM_RSA, KM_PURPOSE_ENCRYPT, KM_PURPOSE_DECRYPT, KM_PURPOSE_SIGN, KM_PURPOSE_VERIFY, KM_DIGEST_SHA_2_256, KM_PAD_RSA_PSS, KM_PAD_RSA_PKCS1_1_5_SIGN, KEY_SIZE 2048, RSA PUBLIC EXPONENT 65537, 2021.03.19,10:43:13.900, 
+keymaster_nwd generateKey: ret 0
+HIDL STUB: ~return_status
+keymaster_nwd [DBG] (nwd_helper_api.c:175) Checking CMD 3
+keymaster_swd [DBG] (swd_verify_input.c:595)[swd_verify_input] verify cmd 3
+keymaster_swd [DBG] (swd_configure.c:25)[get_configure_status] device configure status: 1
+keymaster_swd [DBG] (swd_service.c:242)[swd_run_cb] called by PID: 16972
+keymaster_swd [DBG] (swd_service.c:244)[swd_run_cb] swd_get_key_characteristics() begin
+keymaster_swd [DBG] (swd_integrity.c:45)[swd_get_integrity_status] ret 2
+keymaster_swd [WRN] (swd_blob_dec.c:53)[blob_dec_init] enc_ver = 40
+keymaster_swd [DBG] (swd_blob_dec.c:65)[blob_dec_init] required len = 1595
+keymaster_swd [DBG] (swd_version.c:188)[km_check_key_os_version_patchlevels] returns 0
+keymaster_swd [WRN] (swd_service.c:248)[swd_run_cb] swd_get_key_characteristics() returns 0
+keymaster_nwd [WRN] (params_log.c:113) KEY_PARAMS: KM_ALGORITHM_RSA, KM_PURPOSE_ENCRYPT, KM_PURPOSE_DECRYPT, KM_PURPOSE_SIGN, KM_PURPOSE_VERIFY, KM_DIGEST_SHA_2_256, KM_PAD_RSA_PSS, KM_PAD_RSA_PKCS1_1_5_SIGN, KEY_SIZE 2048, RSA PUBLIC EXPONENT 65537, 2021.03.19,10:43:13.900, 
+keymaster_nwd getKeyCharacteristics: ret 0
+HIDL STUB: ~return_status
+keymaster_nwd src->length = 16, cmp->length = 16
+keymaster_nwd [DBG] (nwd_helper_api.c:309) Loading /tmp/keymaster_test_keys_QC_user/GAK_RSA.private ...
+keymaster_nwd [DBG] (nwd_helper_api.c:309) Loading /tmp/keymaster_test_keys_QC_user/GAK_EC.private ...
+keymaster_nwd [DBG] (nwd_helper_api.c:309) Loading /tmp/keymaster_test_keys_QC_user/gakrsacert0.der ...
+keymaster_nwd [DBG] (nwd_helper_api.c:309) Loading /tmp/keymaster_test_keys_QC_user/gakeccert0.der ...
+keymaster_nwd [DBG] (nwd_helper_api.c:175) Checking CMD 14
+keymaster_nwd [DBG] (nwd_secnvm_support.c:41) ssp_init
+keymaster_nwd [DBG] (nwd_secnvm_support.c:54) SSP init fd: 3
+
+keymaster_nwd [DBG] (nwd_secnvm_support.c:55) SSP init request
+
+keymaster_nwd [DBG] (nwd_secnvm_support.c:65) SSP init done
+
+keymaster_swd [WRN] (grdm_stubs.c:17)[secGrdm_open] Call secGrdm_open STUB function
+keymaster_swd [DBG] (swd_verify_input.c:595)[swd_verify_input] verify cmd 14
+keymaster_swd [DBG] (swd_configure.c:25)[get_configure_status] device configure status: 1
+keymaster_swd [DBG] (swd_service.c:242)[swd_run_cb] called by PID: 16972
+keymaster_swd [DBG] (swd_service.c:244)[swd_run_cb] swd_key_attest() begin
+keymaster_swd [DBG] (swd_integrity.c:45)[swd_get_integrity_status] ret 2
+keymaster_swd [WRN] (swd_blob_dec.c:53)[blob_dec_init] enc_ver = 40
+keymaster_swd [DBG] (swd_blob_dec.c:65)[blob_dec_init] required len = 1595
+keymaster_swd [DBG] (swd_version.c:188)[km_check_key_os_version_patchlevels] returns 0
+keymaster_swd [DBG] (swd_key_attest.c:1011)[swd_is_gak] no KM_TAG_SAMSUNG_ATTESTATION_ROOT in kp
+keymaster_swd [DBG] (swd_key_attest.c:1018)[swd_is_gak] no KM_TAG_SAMSUNG_ATTESTATION_ROOT in ap
+keymaster_swd [DBG] (swd_key_attest.c:1110)[swd_key_attest] GAK provision data
+keymaster_swd [DBG] (swd_key_attest.c:361)[swd_attest_set_not_before] 
+keymaster_swd [DBG] (swd_key_attest.c:434)[swd_attest_set_not_after] 
+keymaster_swd [DBG] (swd_key_attest.c:1011)[swd_is_gak] no KM_TAG_SAMSUNG_ATTESTATION_ROOT in kp
+keymaster_swd [DBG] (swd_key_attest.c:1018)[swd_is_gak] no KM_TAG_SAMSUNG_ATTESTATION_ROOT in ap
+keymaster_swd [DBG] (swd_key_attest.c:882)[swd_attest_set_subj_pubkey] 
+keymaster_swd [DBG] (swd_key_attest.c:969)[swd_attest_deserialize_signkey] 
+keymaster_swd [DBG] (swd_key_attest.c:939)[_swd_attest_deserialize_signkey] 
+keymaster_swd [WRN] (swd_blob_dec.c:53)[blob_dec_init] enc_ver = 40
+keymaster_swd [DBG] (swd_blob_dec.c:65)[blob_dec_init] required len = 701
+>>>>>>>>>>>>>>> BORINGSSL!!!!
+keymaster_nwd [DBG] (km_dump.c:41) 0x000000: 30 82 03 65 a0 03 02 01 02 02 01 01 30 0d 06 09 0..e........0...
+keymaster_nwd [DBG] (km_dump.c:41) 0x000010: 2a 86 48 86 f7 0d 01 01 0b 05 00 30 76 31 0b 30 *.H........0v1.0
+keymaster_nwd [DBG] (km_dump.c:41) 0x000020: 09 06 03 55 04 06 13 02 55 53 31 13 30 11 06 03 ...U....US1.0...
+keymaster_nwd [DBG] (km_dump.c:41) 0x000030: 55 04 08 0c 0a 43 61 6c 69 66 6f 72 6e 69 61 31 U....California1
+keymaster_nwd [DBG] (km_dump.c:41) 0x000040: 15 30 13 06 03 55 04 0a 0c 0c 47 6f 6f 67 6c 65 .0...U....Google
+keymaster_nwd [DBG] (km_dump.c:41) 0x000050: 2c 20 49 6e 63 2e 31 10 30 0e 06 03 55 04 0b 0c , Inc.1.0...U...
+keymaster_nwd [DBG] (km_dump.c:41) 0x000060: 07 41 6e 64 72 6f 69 64 31 29 30 27 06 03 55 04 .Android1)0'..U.
+keymaster_nwd [DBG] (km_dump.c:41) 0x000070: 03 0c 20 41 6e 64 72 6f 69 64 20 53 6f 66 74 77 .. Android Softw
+keymaster_nwd [DBG] (km_dump.c:41) 0x000080: 61 72 65 20 41 74 74 65 73 74 61 74 69 6f 6e 20 are Attestation 
+keymaster_nwd [DBG] (km_dump.c:41) 0x000090: 4b 65 79 30 1e 17 0d 32 31 30 33 31 38 30 38 34 Key0...210318084
+keymaster_nwd [DBG] (km_dump.c:41) 0x0000a0: 33 31 33 5a 17 0d 32 31 30 33 32 39 30 38 34 33 313Z..2103290843
+keymaster_nwd [DBG] (km_dump.c:41) 0x0000b0: 31 33 5a 30 1f 31 1d 30 1b 06 03 55 04 03 0c 14 13Z0.1.0...U....
+keymaster_nwd [DBG] (km_dump.c:41) 0x0000c0: 41 6e 64 72 6f 69 64 20 4b 65 79 73 74 6f 72 65 Android Keystore
+keymaster_nwd [DBG] (km_dump.c:41) 0x0000d0: 20 4b 65 79 30 82 01 22 30 0d 06 09 2a 86 48 86  Key0.."0...*.H.
+keymaster_nwd [DBG] (km_dump.c:41) 0x0000e0: f7 0d 01 01 01 05 00 03 82 01 0f 00 30 82 01 0a ............0...
+keymaster_nwd [DBG] (km_dump.c:41) 0x0000f0: 02 82 01 01 00 c7 2c 3c 0a 3c a8 bb 70 22 ea 27 ......,<.<..p".'
+keymaster_nwd [DBG] (km_dump.c:41) 0x000100: 8e a0 04 69 28 ab ec 7f e0 42 b8 4c 78 6d 93 78 ...i(....B.Lxm.x
+keymaster_nwd [DBG] (km_dump.c:41) 0x000110: 04 93 f2 5d 24 55 b7 34 eb 2a e9 91 08 72 ca 65 ...]$U.4.*...r.e
+keymaster_nwd [DBG] (km_dump.c:41) 0x000120: ca 56 83 a9 2c ef a9 b8 9e d3 09 7c 2a 15 9d 4c .V..,......|*..L
+keymaster_nwd [DBG] (km_dump.c:41) 0x000130: 93 63 d8 da 61 5b c0 2e 37 d6 8f 44 5f 03 f9 c6 .c..a[..7..D_...
+keymaster_nwd [DBG] (km_dump.c:41) 0x000140: 83 72 f4 22 26 da 50 4b 5b d2 ad 17 0e 60 6c 26 .r."&.PK[....`l&
+keymaster_nwd [DBG] (km_dump.c:41) 0x000150: 42 f7 cb cd e5 d2 40 cd 4b b7 b5 61 d2 96 3b 7c B.....@.K..a..;|
+keymaster_nwd [DBG] (km_dump.c:41) 0x000160: d3 23 93 f9 f6 ea 8a d4 b7 b3 5a 96 05 5f a6 27 .#........Z.._.'
+keymaster_nwd [DBG] (km_dump.c:41) 0x000170: 24 13 53 d6 71 1e 5f 96 2c b8 ab 58 0f 57 92 e8 $.S.q._.,..X.W..
+keymaster_nwd [DBG] (km_dump.c:41) 0x000180: 94 dd 0c 03 d1 99 25 2f 71 3d 22 75 8c d8 02 9e ......%/q="u....
+keymaster_nwd [DBG] (km_dump.c:41) 0x000190: 54 ec 0a 10 45 9a f6 fd ea f5 df e1 d0 42 39 f0 T...E........B9.
+keymaster_nwd [DBG] (km_dump.c:41) 0x0001a0: bb d0 fc 48 55 8b 36 4b 98 5e 4f 93 c7 01 48 64 ...HU.6K.^O...Hd
+keymaster_nwd [DBG] (km_dump.c:41) 0x0001b0: 43 f6 e2 fd b3 d8 17 c8 36 95 4e 02 f1 16 c7 20 C.......6.N.... 
+keymaster_nwd [DBG] (km_dump.c:41) 0x0001c0: 29 59 7d a8 54 18 3e 9d 58 f6 08 dd 74 21 8a 65 )Y}.T.>.X...t!.e
+keymaster_nwd [DBG] (km_dump.c:41) 0x0001d0: 50 2b 09 ab 28 97 1d 32 de 64 2d 6e 2d 05 ae 86 P+..(..2.d-n-...
+keymaster_nwd [DBG] (km_dump.c:41) 0x0001e0: 39 e9 f4 d9 db a6 cc fb 27 e3 d7 ee f6 c0 73 28 9.......'.....s(
+keymaster_nwd [DBG] (km_dump.c:41) 0x0001f0: a6 f7 fd a1 55 02 03 01 00 01 a3 82 01 6b 30 82 ....U........k0.
+keymaster_nwd [DBG] (km_dump.c:41) 0x000200: 01 67 30 82 01 53 06 0a 2b 06 01 04 01 d6 79 02 .g0..S..+.....y.
+keymaster_nwd [DBG] (km_dump.c:41) 0x000210: 01 11 04 82 01 43 30 82 01 3f 02 01 03 0a 01 01 .....C0..?......
+keymaster_nwd [DBG] (km_dump.c:41) 0x000220: 02 01 04 0a 01 01 04 10 61 74 74 65 73 74 5f 63 ........attest_c
+keymaster_nwd [DBG] (km_dump.c:41) 0x000230: 68 61 6c 6c 65 6e 67 65 04 10 eb 2d 29 07 9a f5 hallenge...-)...
+keymaster_nwd [DBG] (km_dump.c:41) 0x000240: f2 5c 5c f9 73 1e f0 cc 51 38 30 44 bf 83 10 08 .\\.s...Q80D....
+keymaster_nwd [DBG] (km_dump.c:41) 0x000250: 02 06 01 78 44 80 c8 6c bf 83 12 08 02 06 01 78 ...xD..l.......x
+keymaster_nwd [DBG] (km_dump.c:41) 0x000260: 7d 26 bc 6c bf 85 3d 08 02 06 01 78 49 a7 24 6c }&.l..=....xI.$l
+keymaster_nwd [DBG] (km_dump.c:41) 0x000270: bf 85 45 1c 04 1a 41 74 74 65 73 74 61 74 69 6f ..E...Attestatio
+keymaster_nwd [DBG] (km_dump.c:41) 0x000280: 6e 20 61 70 70 6c 69 63 61 74 69 6f 6e 20 69 64 n application id
+keymaster_nwd [DBG] (km_dump.c:41) 0x000290: 30 81 c6 a1 0e 31 0c 02 01 00 02 01 01 02 01 02 0....1..........
+keymaster_nwd [DBG] (km_dump.c:41) 0x0002a0: 02 01 03 a2 03 02 01 01 a3 04 02 02 08 00 a5 05 ................
+keymaster_nwd [DBG] (km_dump.c:41) 0x0002b0: 31 03 02 01 04 a6 08 31 06 02 01 03 02 01 05 bf 1......1........
+keymaster_nwd [DBG] (km_dump.c:41) 0x0002c0: 81 48 05 02 03 01 00 01 bf 84 59 10 04 0e 41 70 .H........Y...Ap
+keymaster_nwd [DBG] (km_dump.c:41) 0x0002d0: 70 6c 69 63 61 74 69 6f 6e 20 69 64 bf 85 3e 03 plication id..>.
+keymaster_nwd [DBG] (km_dump.c:41) 0x0002e0: 02 01 00 bf 85 40 4c 30 4a 04 20 00 00 00 00 00 .....@L0J. .....
+keymaster_nwd [DBG] (km_dump.c:41) 0x0002f0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ................
+keymaster_nwd [DBG] (km_dump.c:41) 0x000300: 00 00 00 00 00 00 00 00 00 00 00 01 01 ff 0a 01 ................
+keymaster_nwd [DBG] (km_dump.c:41) 0x000310: 00 04 20 01 02 03 04 05 00 00 00 00 00 00 00 00 .. .............
+keymaster_nwd [DBG] (km_dump.c:41) 0x000320: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ................
+keymaster_nwd [DBG] (km_dump.c:41) 0x000330: 00 00 00 bf 85 41 05 02 03 01 38 80 bf 85 42 05 .....A....8...B.
+keymaster_nwd [DBG] (km_dump.c:41) 0x000340: 02 03 03 14 49 bf 85 4e 06 02 04 01 33 ec 85 bf ....I..N....3...
+keymaster_nwd [DBG] (km_dump.c:41) 0x000350: 85 4f 06 02 04 01 33 ec 85 30 0e 06 03 55 1d 0f .O....3..0...U..
+keymaster_nwd [DBG] (km_dump.c:41) 0x000360: 01 01 ff 04 04 03 02 04 b0                      .........       
+>>>>>>>>>>>>>>> BORINGSSL END!!!!
+keymaster_nwd [DBG] (km_dump.c:41) 0x000000: 30 82 03 fc 30 82 03 65 a0 03 02 01 02 02 01 01 0...0..e........
+keymaster_nwd [DBG] (km_dump.c:41) 0x000010: 30 0d 06 09 2a 86 48 86 f7 0d 01 01 0b 05 00 30 0...*.H........0
+keymaster_nwd [DBG] (km_dump.c:41) 0x000020: 76 31 0b 30 09 06 03 55 04 06 13 02 55 53 31 13 v1.0...U....US1.
+keymaster_nwd [DBG] (km_dump.c:41) 0x000030: 30 11 06 03 55 04 08 0c 0a 43 61 6c 69 66 6f 72 0...U....Califor
+keymaster_nwd [DBG] (km_dump.c:41) 0x000040: 6e 69 61 31 15 30 13 06 03 55 04 0a 0c 0c 47 6f nia1.0...U....Go
+keymaster_nwd [DBG] (km_dump.c:41) 0x000050: 6f 67 6c 65 2c 20 49 6e 63 2e 31 10 30 0e 06 03 ogle, Inc.1.0...
+keymaster_nwd [DBG] (km_dump.c:41) 0x000060: 55 04 0b 0c 07 41 6e 64 72 6f 69 64 31 29 30 27 U....Android1)0'
+keymaster_nwd [DBG] (km_dump.c:41) 0x000070: 06 03 55 04 03 0c 20 41 6e 64 72 6f 69 64 20 53 ..U... Android S
+keymaster_nwd [DBG] (km_dump.c:41) 0x000080: 6f 66 74 77 61 72 65 20 41 74 74 65 73 74 61 74 oftware Attestat
+keymaster_nwd [DBG] (km_dump.c:41) 0x000090: 69 6f 6e 20 4b 65 79 30 1e 17 0d 32 31 30 33 31 ion Key0...21031
+keymaster_nwd [DBG] (km_dump.c:41) 0x0000a0: 38 30 38 34 33 31 33 5a 17 0d 32 31 30 33 32 39 8084313Z..210329
+keymaster_nwd [DBG] (km_dump.c:41) 0x0000b0: 30 38 34 33 31 33 5a 30 1f 31 1d 30 1b 06 03 55 084313Z0.1.0...U
+keymaster_nwd [DBG] (km_dump.c:41) 0x0000c0: 04 03 0c 14 41 6e 64 72 6f 69 64 20 4b 65 79 73 ....Android Keys
+keymaster_nwd [DBG] (km_dump.c:41) 0x0000d0: 74 6f 72 65 20 4b 65 79 30 82 01 22 30 0d 06 09 tore Key0.."0...
+keymaster_nwd [DBG] (km_dump.c:41) 0x0000e0: 2a 86 48 86 f7 0d 01 01 01 05 00 03 82 01 0f 00 *.H.............
+keymaster_nwd [DBG] (km_dump.c:41) 0x0000f0: 30 82 01 0a 02 82 01 01 00 c7 2c 3c 0a 3c a8 bb 0.........,<.<..
+keymaster_nwd [DBG] (km_dump.c:41) 0x000100: 70 22 ea 27 8e a0 04 69 28 ab ec 7f e0 42 b8 4c p".'...i(....B.L
+keymaster_nwd [DBG] (km_dump.c:41) 0x000110: 78 6d 93 78 04 93 f2 5d 24 55 b7 34 eb 2a e9 91 xm.x...]$U.4.*..
+keymaster_nwd [DBG] (km_dump.c:41) 0x000120: 08 72 ca 65 ca 56 83 a9 2c ef a9 b8 9e d3 09 7c .r.e.V..,......|
+keymaster_nwd [DBG] (km_dump.c:41) 0x000130: 2a 15 9d 4c 93 63 d8 da 61 5b c0 2e 37 d6 8f 44 *..L.c..a[..7..D
+keymaster_nwd [DBG] (km_dump.c:41) 0x000140: 5f 03 f9 c6 83 72 f4 22 26 da 50 4b 5b d2 ad 17 _....r."&.PK[...
+keymaster_nwd [DBG] (km_dump.c:41) 0x000150: 0e 60 6c 26 42 f7 cb cd e5 d2 40 cd 4b b7 b5 61 .`l&B.....@.K..a
+keymaster_nwd [DBG] (km_dump.c:41) 0x000160: d2 96 3b 7c d3 23 93 f9 f6 ea 8a d4 b7 b3 5a 96 ..;|.#........Z.
+keymaster_nwd [DBG] (km_dump.c:41) 0x000170: 05 5f a6 27 24 13 53 d6 71 1e 5f 96 2c b8 ab 58 ._.'$.S.q._.,..X
+keymaster_nwd [DBG] (km_dump.c:41) 0x000180: 0f 57 92 e8 94 dd 0c 03 d1 99 25 2f 71 3d 22 75 .W........%/q="u
+keymaster_nwd [DBG] (km_dump.c:41) 0x000190: 8c d8 02 9e 54 ec 0a 10 45 9a f6 fd ea f5 df e1 ....T...E.......
+keymaster_nwd [DBG] (km_dump.c:41) 0x0001a0: d0 42 39 f0 bb d0 fc 48 55 8b 36 4b 98 5e 4f 93 .B9....HU.6K.^O.
+keymaster_nwd [DBG] (km_dump.c:41) 0x0001b0: c7 01 48 64 43 f6 e2 fd b3 d8 17 c8 36 95 4e 02 ..HdC.......6.N.
+keymaster_nwd [DBG] (km_dump.c:41) 0x0001c0: f1 16 c7 20 29 59 7d a8 54 18 3e 9d 58 f6 08 dd ... )Y}.T.>.X...
+keymaster_nwd [DBG] (km_dump.c:41) 0x0001d0: 74 21 8a 65 50 2b 09 ab 28 97 1d 32 de 64 2d 6e t!.eP+..(..2.d-n
+keymaster_nwd [DBG] (km_dump.c:41) 0x0001e0: 2d 05 ae 86 39 e9 f4 d9 db a6 cc fb 27 e3 d7 ee -...9.......'...
+keymaster_nwd [DBG] (km_dump.c:41) 0x0001f0: f6 c0 73 28 a6 f7 fd a1 55 02 03 01 00 01 a3 82 ..s(....U.......
+keymaster_nwd [DBG] (km_dump.c:41) 0x000200: 01 6b 30 82 01 67 30 82 01 53 06 0a 2b 06 01 04 .k0..g0..S..+...
+keymaster_nwd [DBG] (km_dump.c:41) 0x000210: 01 d6 79 02 01 11 04 82 01 43 30 82 01 3f 02 01 ..y......C0..?..
+keymaster_nwd [DBG] (km_dump.c:41) 0x000220: 03 0a 01 01 02 01 04 0a 01 01 04 10 61 74 74 65 ............atte
+keymaster_nwd [DBG] (km_dump.c:41) 0x000230: 73 74 5f 63 68 61 6c 6c 65 6e 67 65 04 10 eb 2d st_challenge...-
+keymaster_nwd [DBG] (km_dump.c:41) 0x000240: 29 07 9a f5 f2 5c 5c f9 73 1e f0 cc 51 38 30 44 )....\\.s...Q80D
+keymaster_nwd [DBG] (km_dump.c:41) 0x000250: bf 83 10 08 02 06 01 78 44 80 c8 6c bf 83 12 08 .......xD..l....
+keymaster_nwd [DBG] (km_dump.c:41) 0x000260: 02 06 01 78 7d 26 bc 6c bf 85 3d 08 02 06 01 78 ...x}&.l..=....x
+keymaster_nwd [DBG] (km_dump.c:41) 0x000270: 49 a7 24 6c bf 85 45 1c 04 1a 41 74 74 65 73 74 I.$l..E...Attest
+keymaster_nwd [DBG] (km_dump.c:41) 0x000280: 61 74 69 6f 6e 20 61 70 70 6c 69 63 61 74 69 6f ation applicatio
+keymaster_nwd [DBG] (km_dump.c:41) 0x000290: 6e 20 69 64 30 81 c6 a1 0e 31 0c 02 01 00 02 01 n id0....1......
+keymaster_nwd [DBG] (km_dump.c:41) 0x0002a0: 01 02 01 02 02 01 03 a2 03 02 01 01 a3 04 02 02 ................
+keymaster_nwd [DBG] (km_dump.c:41) 0x0002b0: 08 00 a5 05 31 03 02 01 04 a6 08 31 06 02 01 03 ....1......1....
+keymaster_nwd [DBG] (km_dump.c:41) 0x0002c0: 02 01 05 bf 81 48 05 02 03 01 00 01 bf 84 59 10 .....H........Y.
+keymaster_nwd [DBG] (km_dump.c:41) 0x0002d0: 04 0e 41 70 70 6c 69 63 61 74 69 6f 6e 20 69 64 ..Application id
+keymaster_nwd [DBG] (km_dump.c:41) 0x0002e0: bf 85 3e 03 02 01 00 bf 85 40 4c 30 4a 04 20 00 ..>......@L0J. .
+keymaster_nwd [DBG] (km_dump.c:41) 0x0002f0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ................
+keymaster_nwd [DBG] (km_dump.c:41) 0x000300: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 01 ................
+keymaster_nwd [DBG] (km_dump.c:41) 0x000310: 01 ff 0a 01 00 04 20 01 02 03 04 05 00 00 00 00 ...... .........
+keymaster_nwd [DBG] (km_dump.c:41) 0x000320: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ................
+keymaster_nwd [DBG] (km_dump.c:41) 0x000330: 00 00 00 00 00 00 00 bf 85 41 05 02 03 01 38 80 .........A....8.
+keymaster_nwd [DBG] (km_dump.c:41) 0x000340: bf 85 42 05 02 03 03 14 49 bf 85 4e 06 02 04 01 ..B.....I..N....
+keymaster_nwd [DBG] (km_dump.c:41) 0x000350: 33 ec 85 bf 85 4f 06 02 04 01 33 ec 85 30 0e 06 3....O....3..0..
+keymaster_nwd [DBG] (km_dump.c:41) 0x000360: 03 55 1d 0f 01 01 ff 04 04 03 02 04 b0 30 0d 06 .U...........0..
+keymaster_nwd [DBG] (km_dump.c:41) 0x000370: 09 2a 86 48 86 f7 0d 01 01 0b 05 00 03 81 81 00 .*.H............
+keymaster_nwd [DBG] (km_dump.c:41) 0x000380: 6b a8 eb f6 6a 59 d6 bb 01 93 ab a5 8d 7f 6a 01 k...jY........j.
+keymaster_nwd [DBG] (km_dump.c:41) 0x000390: e4 79 aa 16 26 6f 4c a6 d4 d1 2e de 6b 37 e1 27 .y..&oL.....k7.'
+keymaster_nwd [DBG] (km_dump.c:41) 0x0003a0: 4d a3 3f 9d 94 31 e8 c9 85 90 11 bc 93 ab b0 05 M.?..1..........
+keymaster_nwd [DBG] (km_dump.c:41) 0x0003b0: e5 e2 eb 4d c4 fc 79 95 03 58 76 67 1f 4a c0 de ...M..y..Xvg.J..
+keymaster_nwd [DBG] (km_dump.c:41) 0x0003c0: 20 63 49 f3 6a eb bc 34 80 d8 19 5b 35 58 c7 bf  cI.j..4...[5X..
+keymaster_nwd [DBG] (km_dump.c:41) 0x0003d0: 25 ab 1c 41 10 3d f9 df ff 91 fa 5b 98 66 5b 2c %..A.=.....[.f[,
+keymaster_nwd [DBG] (km_dump.c:41) 0x0003e0: 32 3a 3d 46 be a7 f4 0d fc 03 9b 45 66 aa 72 50 2:=F.......Ef.rP
+keymaster_nwd [DBG] (km_dump.c:41) 0x0003f0: 98 bf c2 21 1d e5 25 06 72 b5 84 71 aa 19 ac 9f ...!..%.r..q....
+keymaster_swd [WRN] (swd_service.c:248)[swd_run_cb] swd_key_attest() returns 0
+keymaster_nwd [DBG] (nwd_secnvm_support.c:81) ssp_exit
+keymaster_nwd [DBG] (nwd_secnvm_support.c:95) SSP exit fd 3
+
+keymaster_nwd [DBG] (nwd_secnvm_support.c:96) SSP exit request with pm_mode: 0
+
+keymaster_nwd [DBG] (nwd_secnvm_support.c:106) SSP exit done
+
+keymaster_swd [WRN] (grdm_stubs.c:23)[secGrdm_close] Call secGrdm_close STUB function
+keymaster_nwd [DBG] (nwd_helper_api.c:309) Loading /tmp/keymaster_test_keys_QC_user/gakrsacert0.der ...
+keymaster_nwd [DBG] (nwd_helper_api.c:309) Loading /tmp/keymaster_test_keys_QC_user/gakrsacert1.der ...
+keymaster_nwd [DBG] (nwd_helper_api.c:309) Loading /tmp/keymaster_test_keys_QC_user/gakrsacert2.der ...
+keymaster_nwd [WRN] (file_operations.c:130) Cannot open file: /tmp/keymaster_test_keys_QC_user/gakrsacert2.der
+keymaster_nwd [WRN] (nwd_helper_api.c:311) get_saved_prov_data: no cert or private key for tag 0x90001402
+keymaster_nwd [WRN] (nwd_helper_api.c:641) _add_cert_chain: no cert file for cert_2
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+keymaster_nwd [DBG] (km_dump.c:41) 0x000000: 30 82 03 fc 30 82 03 65 a0 03 02 01 02 02 01 01 0...0..e........
+keymaster_nwd [DBG] (km_dump.c:41) 0x000010: 30 0d 06 09 2a 86 48 86 f7 0d 01 01 0b 05 00 30 0...*.H........0
+keymaster_nwd [DBG] (km_dump.c:41) 0x000020: 76 31 0b 30 09 06 03 55 04 06 13 02 55 53 31 13 v1.0...U....US1.
+keymaster_nwd [DBG] (km_dump.c:41) 0x000030: 30 11 06 03 55 04 08 0c 0a 43 61 6c 69 66 6f 72 0...U....Califor
+keymaster_nwd [DBG] (km_dump.c:41) 0x000040: 6e 69 61 31 15 30 13 06 03 55 04 0a 0c 0c 47 6f nia1.0...U....Go
+keymaster_nwd [DBG] (km_dump.c:41) 0x000050: 6f 67 6c 65 2c 20 49 6e 63 2e 31 10 30 0e 06 03 ogle, Inc.1.0...
+keymaster_nwd [DBG] (km_dump.c:41) 0x000060: 55 04 0b 0c 07 41 6e 64 72 6f 69 64 31 29 30 27 U....Android1)0'
+keymaster_nwd [DBG] (km_dump.c:41) 0x000070: 06 03 55 04 03 0c 20 41 6e 64 72 6f 69 64 20 53 ..U... Android S
+keymaster_nwd [DBG] (km_dump.c:41) 0x000080: 6f 66 74 77 61 72 65 20 41 74 74 65 73 74 61 74 oftware Attestat
+keymaster_nwd [DBG] (km_dump.c:41) 0x000090: 69 6f 6e 20 4b 65 79 30 1e 17 0d 32 31 30 33 31 ion Key0...21031
+keymaster_nwd [DBG] (km_dump.c:41) 0x0000a0: 38 30 38 34 33 31 33 5a 17 0d 32 31 30 33 32 39 8084313Z..210329
+keymaster_nwd [DBG] (km_dump.c:41) 0x0000b0: 30 38 34 33 31 33 5a 30 1f 31 1d 30 1b 06 03 55 084313Z0.1.0...U
+keymaster_nwd [DBG] (km_dump.c:41) 0x0000c0: 04 03 0c 14 41 6e 64 72 6f 69 64 20 4b 65 79 73 ....Android Keys
+keymaster_nwd [DBG] (km_dump.c:41) 0x0000d0: 74 6f 72 65 20 4b 65 79 30 82 01 22 30 0d 06 09 tore Key0.."0...
+keymaster_nwd [DBG] (km_dump.c:41) 0x0000e0: 2a 86 48 86 f7 0d 01 01 01 05 00 03 82 01 0f 00 *.H.............
+keymaster_nwd [DBG] (km_dump.c:41) 0x0000f0: 30 82 01 0a 02 82 01 01 00 c7 2c 3c 0a 3c a8 bb 0.........,<.<..
+keymaster_nwd [DBG] (km_dump.c:41) 0x000100: 70 22 ea 27 8e a0 04 69 28 ab ec 7f e0 42 b8 4c p".'...i(....B.L
+keymaster_nwd [DBG] (km_dump.c:41) 0x000110: 78 6d 93 78 04 93 f2 5d 24 55 b7 34 eb 2a e9 91 xm.x...]$U.4.*..
+keymaster_nwd [DBG] (km_dump.c:41) 0x000120: 08 72 ca 65 ca 56 83 a9 2c ef a9 b8 9e d3 09 7c .r.e.V..,......|
+keymaster_nwd [DBG] (km_dump.c:41) 0x000130: 2a 15 9d 4c 93 63 d8 da 61 5b c0 2e 37 d6 8f 44 *..L.c..a[..7..D
+keymaster_nwd [DBG] (km_dump.c:41) 0x000140: 5f 03 f9 c6 83 72 f4 22 26 da 50 4b 5b d2 ad 17 _....r."&.PK[...
+keymaster_nwd [DBG] (km_dump.c:41) 0x000150: 0e 60 6c 26 42 f7 cb cd e5 d2 40 cd 4b b7 b5 61 .`l&B.....@.K..a
+keymaster_nwd [DBG] (km_dump.c:41) 0x000160: d2 96 3b 7c d3 23 93 f9 f6 ea 8a d4 b7 b3 5a 96 ..;|.#........Z.
+keymaster_nwd [DBG] (km_dump.c:41) 0x000170: 05 5f a6 27 24 13 53 d6 71 1e 5f 96 2c b8 ab 58 ._.'$.S.q._.,..X
+keymaster_nwd [DBG] (km_dump.c:41) 0x000180: 0f 57 92 e8 94 dd 0c 03 d1 99 25 2f 71 3d 22 75 .W........%/q="u
+keymaster_nwd [DBG] (km_dump.c:41) 0x000190: 8c d8 02 9e 54 ec 0a 10 45 9a f6 fd ea f5 df e1 ....T...E.......
+keymaster_nwd [DBG] (km_dump.c:41) 0x0001a0: d0 42 39 f0 bb d0 fc 48 55 8b 36 4b 98 5e 4f 93 .B9....HU.6K.^O.
+keymaster_nwd [DBG] (km_dump.c:41) 0x0001b0: c7 01 48 64 43 f6 e2 fd b3 d8 17 c8 36 95 4e 02 ..HdC.......6.N.
+keymaster_nwd [DBG] (km_dump.c:41) 0x0001c0: f1 16 c7 20 29 59 7d a8 54 18 3e 9d 58 f6 08 dd ... )Y}.T.>.X...
+keymaster_nwd [DBG] (km_dump.c:41) 0x0001d0: 74 21 8a 65 50 2b 09 ab 28 97 1d 32 de 64 2d 6e t!.eP+..(..2.d-n
+keymaster_nwd [DBG] (km_dump.c:41) 0x0001e0: 2d 05 ae 86 39 e9 f4 d9 db a6 cc fb 27 e3 d7 ee -...9.......'...
+keymaster_nwd [DBG] (km_dump.c:41) 0x0001f0: f6 c0 73 28 a6 f7 fd a1 55 02 03 01 00 01 a3 82 ..s(....U.......
+keymaster_nwd [DBG] (km_dump.c:41) 0x000200: 01 6b 30 82 01 67 30 82 01 53 06 0a 2b 06 01 04 .k0..g0..S..+...
+keymaster_nwd [DBG] (km_dump.c:41) 0x000210: 01 d6 79 02 01 11 04 82 01 43 30 82 01 3f 02 01 ..y......C0..?..
+keymaster_nwd [DBG] (km_dump.c:41) 0x000220: 03 0a 01 01 02 01 04 0a 01 01 04 10 61 74 74 65 ............atte
+keymaster_nwd [DBG] (km_dump.c:41) 0x000230: 73 74 5f 63 68 61 6c 6c 65 6e 67 65 04 10 eb 2d st_challenge...-
+keymaster_nwd [DBG] (km_dump.c:41) 0x000240: 29 07 9a f5 f2 5c 5c f9 73 1e f0 cc 51 38 30 44 )....\\.s...Q80D
+keymaster_nwd [DBG] (km_dump.c:41) 0x000250: bf 83 10 08 02 06 01 78 44 80 c8 6c bf 83 12 08 .......xD..l....
+keymaster_nwd [DBG] (km_dump.c:41) 0x000260: 02 06 01 78 7d 26 bc 6c bf 85 3d 08 02 06 01 78 ...x}&.l..=....x
+keymaster_nwd [DBG] (km_dump.c:41) 0x000270: 49 a7 24 6c bf 85 45 1c 04 1a 41 74 74 65 73 74 I.$l..E...Attest
+keymaster_nwd [DBG] (km_dump.c:41) 0x000280: 61 74 69 6f 6e 20 61 70 70 6c 69 63 61 74 69 6f ation applicatio
+keymaster_nwd [DBG] (km_dump.c:41) 0x000290: 6e 20 69 64 30 81 c6 a1 0e 31 0c 02 01 00 02 01 n id0....1......
+keymaster_nwd [DBG] (km_dump.c:41) 0x0002a0: 01 02 01 02 02 01 03 a2 03 02 01 01 a3 04 02 02 ................
+keymaster_nwd [DBG] (km_dump.c:41) 0x0002b0: 08 00 a5 05 31 03 02 01 04 a6 08 31 06 02 01 03 ....1......1....
+keymaster_nwd [DBG] (km_dump.c:41) 0x0002c0: 02 01 05 bf 81 48 05 02 03 01 00 01 bf 84 59 10 .....H........Y.
+keymaster_nwd [DBG] (km_dump.c:41) 0x0002d0: 04 0e 41 70 70 6c 69 63 61 74 69 6f 6e 20 69 64 ..Application id
+keymaster_nwd [DBG] (km_dump.c:41) 0x0002e0: bf 85 3e 03 02 01 00 bf 85 40 4c 30 4a 04 20 00 ..>......@L0J. .
+keymaster_nwd [DBG] (km_dump.c:41) 0x0002f0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ................
+keymaster_nwd [DBG] (km_dump.c:41) 0x000300: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 01 ................
+keymaster_nwd [DBG] (km_dump.c:41) 0x000310: 01 ff 0a 01 00 04 20 01 02 03 04 05 00 00 00 00 ...... .........
+keymaster_nwd [DBG] (km_dump.c:41) 0x000320: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ................
+keymaster_nwd [DBG] (km_dump.c:41) 0x000330: 00 00 00 00 00 00 00 bf 85 41 05 02 03 01 38 80 .........A....8.
+keymaster_nwd [DBG] (km_dump.c:41) 0x000340: bf 85 42 05 02 03 03 14 49 bf 85 4e 06 02 04 01 ..B.....I..N....
+keymaster_nwd [DBG] (km_dump.c:41) 0x000350: 33 ec 85 bf 85 4f 06 02 04 01 33 ec 85 30 0e 06 3....O....3..0..
+keymaster_nwd [DBG] (km_dump.c:41) 0x000360: 03 55 1d 0f 01 01 ff 04 04 03 02 04 b0 30 0d 06 .U...........0..
+keymaster_nwd [DBG] (km_dump.c:41) 0x000370: 09 2a 86 48 86 f7 0d 01 01 0b 05 00 03 81 81 00 .*.H............
+keymaster_nwd [DBG] (km_dump.c:41) 0x000380: 6b a8 eb f6 6a 59 d6 bb 01 93 ab a5 8d 7f 6a 01 k...jY........j.
+keymaster_nwd [DBG] (km_dump.c:41) 0x000390: e4 79 aa 16 26 6f 4c a6 d4 d1 2e de 6b 37 e1 27 .y..&oL.....k7.'
+keymaster_nwd [DBG] (km_dump.c:41) 0x0003a0: 4d a3 3f 9d 94 31 e8 c9 85 90 11 bc 93 ab b0 05 M.?..1..........
+keymaster_nwd [DBG] (km_dump.c:41) 0x0003b0: e5 e2 eb 4d c4 fc 79 95 03 58 76 67 1f 4a c0 de ...M..y..Xvg.J..
+keymaster_nwd [DBG] (km_dump.c:41) 0x0003c0: 20 63 49 f3 6a eb bc 34 80 d8 19 5b 35 58 c7 bf  cI.j..4...[5X..
+keymaster_nwd [DBG] (km_dump.c:41) 0x0003d0: 25 ab 1c 41 10 3d f9 df ff 91 fa 5b 98 66 5b 2c %..A.=.....[.f[,
+keymaster_nwd [DBG] (km_dump.c:41) 0x0003e0: 32 3a 3d 46 be a7 f4 0d fc 03 9b 45 66 aa 72 50 2:=F.......Ef.rP
+keymaster_nwd [DBG] (km_dump.c:41) 0x0003f0: 98 bf c2 21 1d e5 25 06 72 b5 84 71 aa 19 ac 9f ...!..%.r..q....
+>>>>>>>>>>>>>>
+keymaster_nwd [DBG] (km_dump.c:41) 0x000000: 30 82 02 b6 30 82 02 1f a0 03 02 01 02 02 02 10 0...0...........
+keymaster_nwd [DBG] (km_dump.c:41) 0x000010: 00 30 0d 06 09 2a 86 48 86 f7 0d 01 01 0b 05 00 .0...*.H........
+keymaster_nwd [DBG] (km_dump.c:41) 0x000020: 30 63 31 0b 30 09 06 03 55 04 06 13 02 55 53 31 0c1.0...U....US1
+keymaster_nwd [DBG] (km_dump.c:41) 0x000030: 13 30 11 06 03 55 04 08 0c 0a 43 61 6c 69 66 6f .0...U....Califo
+keymaster_nwd [DBG] (km_dump.c:41) 0x000040: 72 6e 69 61 31 16 30 14 06 03 55 04 07 0c 0d 4d rnia1.0...U....M
+keymaster_nwd [DBG] (km_dump.c:41) 0x000050: 6f 75 6e 74 61 69 6e 20 56 69 65 77 31 15 30 13 ountain View1.0.
+keymaster_nwd [DBG] (km_dump.c:41) 0x000060: 06 03 55 04 0a 0c 0c 47 6f 6f 67 6c 65 2c 20 49 ..U....Google, I
+keymaster_nwd [DBG] (km_dump.c:41) 0x000070: 6e 63 2e 31 10 30 0e 06 03 55 04 0b 0c 07 41 6e nc.1.0...U....An
+keymaster_nwd [DBG] (km_dump.c:41) 0x000080: 64 72 6f 69 64 30 1e 17 0d 31 36 30 31 30 34 31 droid0...1601041
+keymaster_nwd [DBG] (km_dump.c:41) 0x000090: 32 34 30 35 33 5a 17 0d 33 35 31 32 33 30 31 32 24053Z..35123012
+keymaster_nwd [DBG] (km_dump.c:41) 0x0000a0: 34 30 35 33 5a 30 76 31 0b 30 09 06 03 55 04 06 4053Z0v1.0...U..
+keymaster_nwd [DBG] (km_dump.c:41) 0x0000b0: 13 02 55 53 31 13 30 11 06 03 55 04 08 0c 0a 43 ..US1.0...U....C
+keymaster_nwd [DBG] (km_dump.c:41) 0x0000c0: 61 6c 69 66 6f 72 6e 69 61 31 15 30 13 06 03 55 alifornia1.0...U
+keymaster_nwd [DBG] (km_dump.c:41) 0x0000d0: 04 0a 0c 0c 47 6f 6f 67 6c 65 2c 20 49 6e 63 2e ....Google, Inc.
+keymaster_nwd [DBG] (km_dump.c:41) 0x0000e0: 31 10 30 0e 06 03 55 04 0b 0c 07 41 6e 64 72 6f 1.0...U....Andro
+keymaster_nwd [DBG] (km_dump.c:41) 0x0000f0: 69 64 31 29 30 27 06 03 55 04 03 0c 20 41 6e 64 id1)0'..U... And
+keymaster_nwd [DBG] (km_dump.c:41) 0x000100: 72 6f 69 64 20 53 6f 66 74 77 61 72 65 20 41 74 roid Software At
+keymaster_nwd [DBG] (km_dump.c:41) 0x000110: 74 65 73 74 61 74 69 6f 6e 20 4b 65 79 30 81 9f testation Key0..
+keymaster_nwd [DBG] (km_dump.c:41) 0x000120: 30 0d 06 09 2a 86 48 86 f7 0d 01 01 01 05 00 03 0...*.H.........
+keymaster_nwd [DBG] (km_dump.c:41) 0x000130: 81 8d 00 30 81 89 02 81 81 00 c0 83 23 dc 56 88 ...0........#.V.
+keymaster_nwd [DBG] (km_dump.c:41) 0x000140: 1b b8 30 20 69 f5 b0 85 61 c6 ee be 7f 05 e2 f5 ..0 i...a.......
+keymaster_nwd [DBG] (km_dump.c:41) 0x000150: a8 42 04 8a be 8b 47 be 76 fe ae f2 5c f2 9b 2a .B....G.v...\..*
+keymaster_nwd [DBG] (km_dump.c:41) 0x000160: fa 32 00 14 16 01 42 99 89 a1 5f cf c6 81 5e b3 .2....B..._...^.
+keymaster_nwd [DBG] (km_dump.c:41) 0x000170: 63 58 3c 2f d2 f2 0b e4 98 32 83 dd 81 4b 16 d7 cX</.....2...K..
+keymaster_nwd [DBG] (km_dump.c:41) 0x000180: e1 85 41 7a e5 4a bc 29 6a 3a 6d b5 c0 04 08 3b ..Az.J.)j:m....;
+keymaster_nwd [DBG] (km_dump.c:41) 0x000190: 68 c5 56 c1 f0 23 39 91 64 19 86 4d 50 b7 4d 40 h.V..#9.d..MP.M@
+keymaster_nwd [DBG] (km_dump.c:41) 0x0001a0: ae ca 48 4c 77 35 6c 89 5a 0c 27 5a bf ac 49 9d ..HLw5l.Z.'Z..I.
+keymaster_nwd [DBG] (km_dump.c:41) 0x0001b0: 5d 7d 23 62 f2 9c 5e 02 e8 71 02 03 01 00 01 a3 ]}#b..^..q......
+keymaster_nwd [DBG] (km_dump.c:41) 0x0001c0: 66 30 64 30 1d 06 03 55 1d 0e 04 16 04 14 d4 0c f0d0...U........
+keymaster_nwd [DBG] (km_dump.c:41) 0x0001d0: 10 1b f8 cd 63 b9 f7 39 52 b5 0e 13 5c a6 d7 99 ....c..9R...\...
+keymaster_nwd [DBG] (km_dump.c:41) 0x0001e0: 93 86 30 1f 06 03 55 1d 23 04 18 30 16 80 14 29 ..0...U.#..0...)
+keymaster_nwd [DBG] (km_dump.c:41) 0x0001f0: fa f1 ac cc 4d d2 4c 96 40 27 75 b6 b0 e9 32 e5 ....M.L.@'u...2.
+keymaster_nwd [DBG] (km_dump.c:41) 0x000200: 07 fe 2e 30 12 06 03 55 1d 13 01 01 ff 04 08 30 ...0...U.......0
+keymaster_nwd [DBG] (km_dump.c:41) 0x000210: 06 01 01 ff 02 01 00 30 0e 06 03 55 1d 0f 01 01 .......0...U....
+keymaster_nwd [DBG] (km_dump.c:41) 0x000220: ff 04 04 03 02 02 84 30 0d 06 09 2a 86 48 86 f7 .......0...*.H..
+keymaster_nwd [DBG] (km_dump.c:41) 0x000230: 0d 01 01 0b 05 00 03 81 81 00 9e 2d 48 5f 8c 67 ...........-H_.g
+keymaster_nwd [DBG] (km_dump.c:41) 0x000240: 33 dc 1a 85 ad 99 d7 50 23 ea 14 ec 43 b0 e1 9d 3......P#...C...
+keymaster_nwd [DBG] (km_dump.c:41) 0x000250: ea c2 23 46 1e 72 b5 19 dc 60 22 e4 a5 68 31 6c ..#F.r...`"..h1l
+keymaster_nwd [DBG] (km_dump.c:41) 0x000260: 0b 55 c4 e6 9c a2 2d 9f 3a 4f 93 6b 31 8b 16 78 .U....-.:O.k1..x
+keymaster_nwd [DBG] (km_dump.c:41) 0x000270: 16 0d 88 cb d9 8b cc 80 9d 84 f0 c2 27 e3 6b 38 ............'.k8
+keymaster_nwd [DBG] (km_dump.c:41) 0x000280: f1 fd d1 e7 17 72 31 59 35 7d 96 f3 c5 7f ab 9d .....r1Y5}......
+keymaster_nwd [DBG] (km_dump.c:41) 0x000290: 8f 96 61 26 4f b2 be 81 bb 0d 49 04 22 8a ce 9f ..a&O.....I."...
+keymaster_nwd [DBG] (km_dump.c:41) 0x0002a0: f7 f5 42 2e 25 44 fa 21 07 12 5a 83 b5 55 ad 18 ..B.%D.!..Z..U..
+keymaster_nwd [DBG] (km_dump.c:41) 0x0002b0: 82 f8 40 14 9b 9c 20 63 04 7f                   ..@... c..      
+>>>>>>>>>>>>>>
+keymaster_nwd [DBG] (km_dump.c:41) 0x000000: 30 82 02 a7 30 82 02 10 a0 03 02 01 02 02 09 00 0...0...........
+keymaster_nwd [DBG] (km_dump.c:41) 0x000010: ff 94 d9 dd 9f 07 c8 0c 30 0d 06 09 2a 86 48 86 ........0...*.H.
+keymaster_nwd [DBG] (km_dump.c:41) 0x000020: f7 0d 01 01 0b 05 00 30 63 31 0b 30 09 06 03 55 .......0c1.0...U
+keymaster_nwd [DBG] (km_dump.c:41) 0x000030: 04 06 13 02 55 53 31 13 30 11 06 03 55 04 08 0c ....US1.0...U...
+keymaster_nwd [DBG] (km_dump.c:41) 0x000040: 0a 43 61 6c 69 66 6f 72 6e 69 61 31 16 30 14 06 .California1.0..
+keymaster_nwd [DBG] (km_dump.c:41) 0x000050: 03 55 04 07 0c 0d 4d 6f 75 6e 74 61 69 6e 20 56 .U....Mountain V
+keymaster_nwd [DBG] (km_dump.c:41) 0x000060: 69 65 77 31 15 30 13 06 03 55 04 0a 0c 0c 47 6f iew1.0...U....Go
+keymaster_nwd [DBG] (km_dump.c:41) 0x000070: 6f 67 6c 65 2c 20 49 6e 63 2e 31 10 30 0e 06 03 ogle, Inc.1.0...
+keymaster_nwd [DBG] (km_dump.c:41) 0x000080: 55 04 0b 0c 07 41 6e 64 72 6f 69 64 30 1e 17 0d U....Android0...
+keymaster_nwd [DBG] (km_dump.c:41) 0x000090: 31 36 30 31 30 34 31 32 33 31 30 38 5a 17 0d 33 160104123108Z..3
+keymaster_nwd [DBG] (km_dump.c:41) 0x0000a0: 35 31 32 33 30 31 32 33 31 30 38 5a 30 63 31 0b 51230123108Z0c1.
+keymaster_nwd [DBG] (km_dump.c:41) 0x0000b0: 30 09 06 03 55 04 06 13 02 55 53 31 13 30 11 06 0...U....US1.0..
+keymaster_nwd [DBG] (km_dump.c:41) 0x0000c0: 03 55 04 08 0c 0a 43 61 6c 69 66 6f 72 6e 69 61 .U....California
+keymaster_nwd [DBG] (km_dump.c:41) 0x0000d0: 31 16 30 14 06 03 55 04 07 0c 0d 4d 6f 75 6e 74 1.0...U....Mount
+keymaster_nwd [DBG] (km_dump.c:41) 0x0000e0: 61 69 6e 20 56 69 65 77 31 15 30 13 06 03 55 04 ain View1.0...U.
+keymaster_nwd [DBG] (km_dump.c:41) 0x0000f0: 0a 0c 0c 47 6f 6f 67 6c 65 2c 20 49 6e 63 2e 31 ...Google, Inc.1
+keymaster_nwd [DBG] (km_dump.c:41) 0x000100: 10 30 0e 06 03 55 04 0b 0c 07 41 6e 64 72 6f 69 .0...U....Androi
+keymaster_nwd [DBG] (km_dump.c:41) 0x000110: 64 30 81 9f 30 0d 06 09 2a 86 48 86 f7 0d 01 01 d0..0...*.H.....
+keymaster_nwd [DBG] (km_dump.c:41) 0x000120: 01 05 00 03 81 8d 00 30 81 89 02 81 81 00 a2 6b .......0.......k
+keymaster_nwd [DBG] (km_dump.c:41) 0x000130: ad eb 6e 2e 44 61 ef d5 0e 82 e6 b7 94 d1 75 23 ..n.Da........u#
+keymaster_nwd [DBG] (km_dump.c:41) 0x000140: 1f 77 9b 63 91 63 ff f7 aa ff 0b 72 47 4e c0 2c .w.c.c.....rGN.,
+keymaster_nwd [DBG] (km_dump.c:41) 0x000150: 43 ec 33 7c d7 ac ed 40 3e 8c 28 a0 66 d5 f7 87 C.3|...@>.(.f...
+keymaster_nwd [DBG] (km_dump.c:41) 0x000160: 0b 33 97 de 0e b8 4e 13 40 ab af a5 27 bf 95 69 .3....N.@...'..i
+keymaster_nwd [DBG] (km_dump.c:41) 0x000170: a0 31 db 06 52 65 f8 44 59 57 61 f0 bb f2 17 4b .1..Re.DYWa....K
+keymaster_nwd [DBG] (km_dump.c:41) 0x000180: b7 41 80 64 c0 28 0e 8f 52 77 8e db d2 47 b6 45 .A.d.(..Rw...G.E
+keymaster_nwd [DBG] (km_dump.c:41) 0x000190: e9 19 c8 e9 8b c3 db c2 91 3f d7 d7 50 c4 1d 35 .........?..P..5
+keymaster_nwd [DBG] (km_dump.c:41) 0x0001a0: 66 f9 57 e4 97 96 0b 09 ac ce 92 35 85 9b 02 03 f.W........5....
+keymaster_nwd [DBG] (km_dump.c:41) 0x0001b0: 01 00 01 a3 63 30 61 30 1d 06 03 55 1d 0e 04 16 ....c0a0...U....
+keymaster_nwd [DBG] (km_dump.c:41) 0x0001c0: 04 14 29 fa f1 ac cc 4d d2 4c 96 40 27 75 b6 b0 ..)....M.L.@'u..
+keymaster_nwd [DBG] (km_dump.c:41) 0x0001d0: e9 32 e5 07 fe 2e 30 1f 06 03 55 1d 23 04 18 30 .2....0...U.#..0
+keymaster_nwd [DBG] (km_dump.c:41) 0x0001e0: 16 80 14 29 fa f1 ac cc 4d d2 4c 96 40 27 75 b6 ...)....M.L.@'u.
+keymaster_nwd [DBG] (km_dump.c:41) 0x0001f0: b0 e9 32 e5 07 fe 2e 30 0f 06 03 55 1d 13 01 01 ..2....0...U....
+keymaster_nwd [DBG] (km_dump.c:41) 0x000200: ff 04 05 30 03 01 01 ff 30 0e 06 03 55 1d 0f 01 ...0....0...U...
+keymaster_nwd [DBG] (km_dump.c:41) 0x000210: 01 ff 04 04 03 02 02 84 30 0d 06 09 2a 86 48 86 ........0...*.H.
+keymaster_nwd [DBG] (km_dump.c:41) 0x000220: f7 0d 01 01 0b 05 00 03 81 81 00 4f 72 f3 36 59 ...........Or.6Y
+keymaster_nwd [DBG] (km_dump.c:41) 0x000230: 8d 0e c1 b9 74 5b 31 59 f6 f0 8d 25 49 30 9e a3 ....t[1Y...%I0..
+keymaster_nwd [DBG] (km_dump.c:41) 0x000240: 1c 1c 29 d2 45 2d 20 b9 4d 5f 64 b4 e8 80 c7 78 ..).E- .M_d....x
+keymaster_nwd [DBG] (km_dump.c:41) 0x000250: 7a 9c 39 de a8 b3 f5 bf 2f 70 5f 47 10 5c c5 e6 z.9...../p_G.\..
+keymaster_nwd [DBG] (km_dump.c:41) 0x000260: eb 4d 06 99 61 d2 ae 9a 07 ff f7 7c b8 ab eb 9c .M..a......|....
+keymaster_nwd [DBG] (km_dump.c:41) 0x000270: 0f 24 07 5e b1 7f ba 79 71 fd 4d 5b 9e df 14 a9 .$.^...yq.M[....
+keymaster_nwd [DBG] (km_dump.c:41) 0x000280: fe df ed 7c c0 88 5d f8 dd 9b 64 32 56 d5 35 9a ...|..]...d2V.5.
+keymaster_nwd [DBG] (km_dump.c:41) 0x000290: e2 13 f9 8f ce c1 7c dc ef a4 aa b2 55 c3 83 a9 ......|.....U...
+keymaster_nwd [DBG] (km_dump.c:41) 0x0002a0: 2e fb 5c f6 62 f5 27 52 17 be 63                ..\.b.'R..c     
+keymaster_nwd attestKey: ret 0
+HIDL STUB: ~return_status
+/hdd2/repo/y2s_r/android/external/boringssl/src/crypto/x509/x509_vpm.c:283:24: runtime error: implicit conversion from type 'int' of value -3 (32-bit, signed) to type 'unsigned long' changed the value to 18446744073709551613 (64-bit, unsigned)
+SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior /hdd2/repo/y2s_r/android/external/boringssl/src/crypto/x509/x509_vpm.c:283:24 in 
+keymaster_nwd X509_verify_cert: ok
+
+keymaster_nwd [DBG] (nwd_helper_api.c:175) Checking CMD 3
+keymaster_swd [DBG] (swd_verify_input.c:595)[swd_verify_input] verify cmd 3
+keymaster_swd [DBG] (swd_configure.c:25)[get_configure_status] device configure status: 1
+keymaster_swd [DBG] (swd_service.c:242)[swd_run_cb] called by PID: 16972
+keymaster_swd [DBG] (swd_service.c:244)[swd_run_cb] swd_get_key_characteristics() begin
+keymaster_swd [DBG] (swd_integrity.c:45)[swd_get_integrity_status] ret 2
+keymaster_swd [WRN] (swd_blob_dec.c:53)[blob_dec_init] enc_ver = 40
+keymaster_swd [DBG] (swd_blob_dec.c:65)[blob_dec_init] required len = 1595
+keymaster_swd [DBG] (swd_version.c:188)[km_check_key_os_version_patchlevels] returns 0
+keymaster_swd [WRN] (swd_service.c:248)[swd_run_cb] swd_get_key_characteristics() returns 0
+keymaster_nwd [WRN] (params_log.c:113) KEY_PARAMS: KM_ALGORITHM_RSA, KM_PURPOSE_ENCRYPT, KM_PURPOSE_DECRYPT, KM_PURPOSE_SIGN, KM_PURPOSE_VERIFY, KM_DIGEST_SHA_2_256, KM_PAD_RSA_PSS, KM_PAD_RSA_PKCS1_1_5_SIGN, KEY_SIZE 2048, RSA PUBLIC EXPONENT 65537, 2021.03.19,10:43:13.900, 
+keymaster_nwd getKeyCharacteristics: ret 0
+HIDL STUB: ~return_status
+keymaster_nwd _ValidateKeyUsage: ku_bits[3] = 0x60, ku_mask = 0xb0
+keymaster_nwd [DBG] (nwd_helper_api.c:175) Checking CMD 3
+keymaster_swd [DBG] (swd_verify_input.c:595)[swd_verify_input] verify cmd 3
+keymaster_swd [DBG] (swd_configure.c:25)[get_configure_status] device configure status: 1
+keymaster_swd [DBG] (swd_service.c:242)[swd_run_cb] called by PID: 16972
+keymaster_swd [DBG] (swd_service.c:244)[swd_run_cb] swd_get_key_characteristics() begin
+keymaster_swd [DBG] (swd_integrity.c:45)[swd_get_integrity_status] ret 2
+keymaster_swd [WRN] (swd_blob_dec.c:53)[blob_dec_init] enc_ver = 40
+keymaster_swd [DBG] (swd_blob_dec.c:65)[blob_dec_init] required len = 1595
+keymaster_swd [DBG] (swd_version.c:188)[km_check_key_os_version_patchlevels] returns 0
+keymaster_swd [WRN] (swd_service.c:248)[swd_run_cb] swd_get_key_characteristics() returns 0
+keymaster_nwd [WRN] (params_log.c:113) KEY_PARAMS: KM_ALGORITHM_RSA, KM_PURPOSE_ENCRYPT, KM_PURPOSE_DECRYPT, KM_PURPOSE_SIGN, KM_PURPOSE_VERIFY, KM_DIGEST_SHA_2_256, KM_PAD_RSA_PSS, KM_PAD_RSA_PKCS1_1_5_SIGN, KEY_SIZE 2048, RSA PUBLIC EXPONENT 65537, 2021.03.19,10:43:13.900, 
+keymaster_nwd getKeyCharacteristics: ret 0
+HIDL STUB: ~return_status
+[       OK ] Attestation.RsaAttestationOK (479 ms)
+HIDL STUB: ~RefBase
+HIDL STUB: decStrong
+[----------] 1 test from Attestation (479 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (479 ms total)
+[  PASSED  ] 1 test.
+HIDL STUB: decStrong
+keymaster_nwd [DBG] (nwd_gatekeeper.cpp:231) close
+HIDL STUB: ~RefBase
+keymaster_nwd [ERR] (nwd_helper_api.c:111) error: TZ is not opened
+keymaster_nwd can't close connection with trustlet
+HIDL STUB: ~RefBase
