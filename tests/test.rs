@@ -1,5 +1,4 @@
 use simple_pkcs8::{KeyPKCS8Builder};
-use pretty_hex::*;
 use std::fs::File;
 use std::io::Read;
 use std::io::BufWriter;
