@@ -85,11 +85,10 @@ fn pkcs8_create_test_rsa() {
     ];
 
     let alg: Vec<u64> = vec![ 1, 2, 840, 113549, 1, 1, 1 ]; /* rsaEncryption (PKCS #1) */
-    let par: Vec<u64> = vec![];
 
     let rsa_key_pkcs8 = KeyPKCS8Builder::new().
         version(0).
-        alg_id(alg, par).
+        alg_id_rsa(alg).
         key_rsa(version, modulus, pub_exp, priv_exp, prime1, prime2, exp1, exp2, coef).
         build();
 
@@ -128,7 +127,7 @@ fn pkcs8_create_test_ec() {
 
     let ec_key_pkcs8 = KeyPKCS8Builder::new().
         version(0).
-        alg_id(alg, par).
+        alg_id_ec(alg, par).
         key_ec(version, priv_key, pub_key).
         build();
 
@@ -145,7 +144,7 @@ fn pkcs8_create_test_ec() {
     let der2 = read_file("keys/ec.pkcs8.der").unwrap();
     assert_eq!(der, der2);
 
-    let ec_key_pkcs8_ = KeyPKCS8Builder::new().
-        from_der(&der2).
-        build();
+    // let ec_key_pkcs8_ = KeyPKCS8Builder::new().
+    //     from_der(&der2).
+    //     build();
 }
