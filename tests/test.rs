@@ -24,6 +24,8 @@ fn write_file(f: &str, data: &Vec<u8>) -> std::io::Result<()> {
 
 #[test]
 fn pkcs8_create_test_rsa() {
+    let der_orig = read_file("keys/rsa.pkcs8.der").unwrap();
+
     let version: u64 = 0;
     let modulus: Vec<u8> = vec![
         0x00, 0xC0, 0x83, 0x23, 0xDC, 0x56, 0x88, 0x1B, 0xB8, 0x30, 0x20, 0x69,
@@ -92,22 +94,32 @@ fn pkcs8_create_test_rsa() {
         key_rsa(version, modulus, pub_exp, priv_exp, prime1, prime2, exp1, exp2, coef).
         build();
 
-    let der = match rsa_key_pkcs8.to_der() {
+    let der1 = match rsa_key_pkcs8.to_der() {
         Some(d) => d,
         None => panic!("pkcs8_to_der() failed"),
     };
-    println!("\n> rsa key pkcs8:\n{}", der.hex_dump());
+    // println!("\n> rsa key pkcs8:\n{}", der1.hex_dump());
+    assert_eq!(der1, der_orig);
 
-    let err = write_file("keys/new_rsa.der", &der).map_err(|e| e.kind());
+    let err = write_file("keys/new_rsa.der", &der1).map_err(|e| e.kind());
     assert_eq!(err, Ok(()));
     println!("\n> SAVED in keys/new_rsa.der");
 
-    let der2 = read_file("keys/rsa.pkcs8.der").unwrap();
-    assert_eq!(der, der2);
+    let ec_key_pkcs8_ = KeyPKCS8Builder::new().
+        from_der(&der_orig).
+        build();
+    
+    let der2 = match ec_key_pkcs8_.to_der() {
+        Some(d) => d,
+        None => panic!("pkcs8_to_der() failed"),
+    };
+    assert_eq!(der2, der_orig);
 }
 
 #[test]
 fn pkcs8_create_test_ec() {
+    let der_orig = read_file("keys/ec.pkcs8.der").unwrap();
+
     let version: u64 = 1;
     let priv_key: Vec<u8> = vec![
         0x5F, 0xFE, 0x06, 0x61, 0xD9, 0x1B, 0x1B, 0xDA, 0x2A, 0x1B, 0x31, 0xDC,
@@ -131,20 +143,25 @@ fn pkcs8_create_test_ec() {
         key_ec(version, priv_key, pub_key).
         build();
 
-    let der = match ec_key_pkcs8.to_der() {
+    let der1 = match ec_key_pkcs8.to_der() {
         Some(d) => d,
         None => panic!("pkcs8_to_der() failed"),
     };
-    println!("\n> ec key pkcs8:\n{}", der.hex_dump());
+    // println!("\n> ec key pkcs8:\n{}", der1.hex_dump());
 
-    let err = write_file("keys/new_ec.der", &der).map_err(|e| e.kind());
+    let err = write_file("keys/new_ec.der", &der1).map_err(|e| e.kind());    
     assert_eq!(err, Ok(()));
     println!("\n> SAVED in keys/new_ec.der");
 
-    let der2 = read_file("keys/ec.pkcs8.der").unwrap();
-    assert_eq!(der, der2);
+    assert_eq!(der1, der_orig);
 
-    // let ec_key_pkcs8_ = KeyPKCS8Builder::new().
-    //     from_der(&der2).
-    //     build();
+    let ec_key_pkcs8_ = KeyPKCS8Builder::new().
+        from_der(&der_orig).
+        build();
+    
+    let der2 = match ec_key_pkcs8_.to_der() {
+        Some(d) => d,
+        None => panic!("pkcs8_to_der() failed"),
+    };
+    assert_eq!(der2, der_orig);
 }

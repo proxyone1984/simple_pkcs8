@@ -250,7 +250,6 @@ impl KeyPKCS8Builder {
             None => println!("Failed: serialize RSA key")
         };
 
-        // self.key = ASN1Block::OctetString(0, key_der);
         self
     }
 
@@ -273,85 +272,69 @@ impl KeyPKCS8Builder {
         self
     }
 
-    // fn asn1_seq(b: &mut ASN1Block, idx: usize) -> Option<&mut ASN1Block> {
-    //     match b {
-    //         ASN1Block::Sequence(_, v) => v.get_mut(idx),
-    //         _ => None,
-    //     }
-    // }
+    fn asn1_seq(b: &ASN1Block, idx: usize) -> Option<&ASN1Block> {
+        match b {
+            ASN1Block::Sequence(_, v) => v.get(idx),
+            _ => None,
+        }
+    }
 
-    // fn asn1_int(b: &mut ASN1Block) -> Option<&mut BigInt> {
-    //     match b {
-    //         ASN1Block::Integer(_, s) => Some(s),
-    //         _ => None,
-    //     }
-    // }
+    fn asn1_int(b: &mut ASN1Block) -> Option<&mut BigInt> {
+        match b {
+            ASN1Block::Integer(_, s) => Some(s),
+            _ => None,
+        }
+    }
 
-    // fn asn1_oid(b: &mut ASN1Block) -> Option<&mut OID> {
-    //     match b {
-    //         ASN1Block::ObjectIdentifier(_, s) => Some(s),
-    //         _ => None,
-    //     }
-    // }
+    fn asn1_oid(b: &mut ASN1Block) -> Option<&mut OID> {
+        match b {
+            ASN1Block::ObjectIdentifier(_, s) => Some(s),
+            _ => None,
+        }
+    }
 
-    // fn get_item<'a>(b: &'a mut ASN1Block, p: &'a [usize]) -> Option<&'a mut ASN1Block> {
-    //     let mut item = b;
-    //     for i in 0..p.len() {
-    //         let ret = KeyPKCS8Builder::asn1_seq(item, p[i]);
+    // fn get_block(data: &Vec<ASN1Block>, num: usize) -> Option<&ASN1Block> {
+    //     let seq = data.get(0).unwrap();
+    //     let block = KeyPKCS8Builder::asn1_seq(seq, num);
+
+        // for i in 0..p.len() {
+        //     let ret = KeyPKCS8Builder::asn1_seq(block, p[i]);
     
-    //         item = match ret {
-    //             Some(v) => v,
-    //             None => {
-    //                 println!("Failed on: path[{}] = {:?}", i, p[i]);
-    //                 return None;
-    //             }
-    //         };
-    //     }
+        //     block = match ret {
+        //         Some(v) => v,
+        //         None => {
+        //             println!("Failed on: path[{}] = {:?}", i, p[i]);
+        //             return None;
+        //         }
+        //     };
+        // }
     
-    //     Some(item)
+    //     block
     // }
 
-    // pub fn from_der(mut self, der: &Vec<u8>) -> KeyPKCS8Builder {
-    //     let mut vec = deserialize(der).unwrap();
-    //     let pkcs8_1 = &mut vec[0].clone();
-    //     let pkcs8_2 = &mut vec[0].clone();
-    //     let pkcs8_3 = &mut vec[0].clone();
-    //     let version_path: [usize; 1] = [0];
-    //     let alg_path: [usize; 2] = [1, 0];
-    //     let par_path: [usize; 2] = [1, 1];
-    //     let version_asn1 = match KeyPKCS8Builder::get_item(pkcs8_1, &version_path) {
-    //         Some(c) => c,
-    //         None => panic!("Failed to get version"),
-    //     };
-    //     let version = match KeyPKCS8Builder::asn1_int(version_asn1) {
-    //         Some(c) => c,
-    //         None => panic!("Failed to get version"),
-    //     };
+    pub fn from_der(mut self, der: &Vec<u8>) -> KeyPKCS8Builder {
+        let vec = deserialize(der).unwrap();
+        let pkcs8 = vec.get(0).unwrap();
 
-    //     let alg_asn1 = match KeyPKCS8Builder::get_item(pkcs8_2, &alg_path) {
-    //         Some(c) => c,
-    //         None => panic!("Failed to get alg"),
-    //     };
-    //     let alg = match KeyPKCS8Builder::asn1_oid(alg_asn1) {
-    //         Some(c) => c,
-    //         None => panic!("Failed to get alg"),
-    //     };
-    //     let par_asn1 = match KeyPKCS8Builder::get_item(pkcs8_3, &par_path) {
-    //         Some(c) => c,
-    //         None => panic!("Failed to get alg"),
-    //     };
-    //     let par = match KeyPKCS8Builder::asn1_oid(par_asn1) {
-    //         Some(c) => c,
-    //         None => panic!("Failed to get alg"),
-    //     };
-    //     println!("\n> Alg: {}", alg.as_raw().unwrap().hex_dump());
-    //     let alg_u64 = oid_u8_to_u64(&alg.as_raw().unwrap()).unwrap();
-    //     let par_u64 = oid_u8_to_u64(&par.as_raw().unwrap()).unwrap();
-    //     self = KeyPKCS8Builder::version(self, version.to_biguint().unwrap().to_bytes_be()[0] as u64).
-    //     alg_id(alg_u64, par_u64);
-    //     println!("\n> Version: {:#?}", self.alg_id);
-    //     self
-    // }
+        let version = match KeyPKCS8Builder::asn1_seq(pkcs8, 0) {
+            Some(c) => c,
+            None => panic!("Failed to get version"),
+        };
+        let alg_id = match KeyPKCS8Builder::asn1_seq(pkcs8, 1) {
+            Some(c) => c,
+            None => panic!("Failed to get alg"),
+        };
+        let key = match KeyPKCS8Builder::asn1_seq(pkcs8, 2) {
+            Some(c) => c,
+            None => panic!("Failed to get alg"),
+        };
+        self.version = version.clone();
+        self.alg_id = alg_id.clone();
+        self.key = key.clone();
+        // println!("\n> Version: {:#?}", self.version);
+        // println!("\n> Alg Id: {:#?}", self.alg_id);
+        self
+    }
 
     pub fn build(self) -> KeyPKCS8 {
         KeyPKCS8 {
