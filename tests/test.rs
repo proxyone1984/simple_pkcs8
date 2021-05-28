@@ -87,28 +87,28 @@ fn pkcs8_create_test_rsa() {
 
     let alg: Vec<u64> = vec![ 1, 2, 840, 113549, 1, 1, 1 ]; /* rsaEncryption (PKCS #1) */
 
-    let rsa_key_pkcs8 = KeyPKCS8Builder::new().
+    let rsa_key_pkcs8_1 = KeyPKCS8Builder::new().
         version(0).
         alg_id_rsa(alg).
         key_rsa(version, modulus, pub_exp, priv_exp, prime1, prime2, exp1, exp2, coef).
         build();
 
-    let der1 = match rsa_key_pkcs8.to_der() {
+    let der1 = match rsa_key_pkcs8_1.to_der() {
         Some(d) => d,
         None => panic!("pkcs8_to_der() failed"),
     };
     // println!("\n> rsa key pkcs8:\n{}", der1.hex_dump());
     assert_eq!(der1, der_orig);
 
-    let err = write_file("keys/new_rsa.der", &der1).map_err(|e| e.kind());
-    assert_eq!(err, Ok(()));
-    println!("\n> SAVED in keys/new_rsa.der");
+    // let err = write_file("keys/new_rsa.der", &der1).map_err(|e| e.kind());
+    // assert_eq!(err, Ok(()));
+    // println!("\n> SAVED in keys/new_rsa.der");
 
-    let ec_key_pkcs8_ = KeyPKCS8Builder::new().
+    let rsa_key_pkcs8_2 = KeyPKCS8Builder::new().
         from_der(&der_orig).
         build();
     
-    let der2 = match ec_key_pkcs8_.to_der() {
+    let der2 = match rsa_key_pkcs8_2.to_der() {
         Some(d) => d,
         None => panic!("pkcs8_to_der() failed"),
     };
@@ -136,29 +136,29 @@ fn pkcs8_create_test_ec() {
     let alg: Vec<u64> = vec![ 1, 2, 840, 10045, 2, 1 ]; /* ecPublicKey (ANSI X9.62 public key type) */
     let par: Vec<u64> = vec![ 1, 2, 840, 10045, 3, 1, 7]; /* prime256v1 (ANSI X9.62 named elliptic curve) */
 
-    let ec_key_pkcs8 = KeyPKCS8Builder::new().
+    let ec_key_pkcs8_1 = KeyPKCS8Builder::new().
         version(0).
         alg_id_ec(alg, par).
         key_ec(version, priv_key, pub_key).
         build();
 
-    let der1 = match ec_key_pkcs8.to_der() {
+    let der1 = match ec_key_pkcs8_1.to_der() {
         Some(d) => d,
         None => panic!("pkcs8_to_der() failed"),
     };
     // println!("\n> ec key pkcs8:\n{}", der1.hex_dump());
 
-    let err = write_file("keys/new_ec.der", &der1).map_err(|e| e.kind());    
-    assert_eq!(err, Ok(()));
-    println!("\n> SAVED in keys/new_ec.der");
-
     assert_eq!(der1, der_orig);
 
-    let ec_key_pkcs8_ = KeyPKCS8Builder::new().
+    // let err = write_file("keys/new_ec.der", &der1).map_err(|e| e.kind());    
+    // assert_eq!(err, Ok(()));
+    // println!("\n> SAVED in keys/new_ec.der");
+
+    let ec_key_pkcs8_2 = KeyPKCS8Builder::new().
         from_der(&der_orig).
         build();
     
-    let der2 = match ec_key_pkcs8_.to_der() {
+    let der2 = match ec_key_pkcs8_2.to_der() {
         Some(d) => d,
         None => panic!("pkcs8_to_der() failed"),
     };
