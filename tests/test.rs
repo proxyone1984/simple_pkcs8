@@ -23,7 +23,10 @@ fn write_file(f: &str, data: &Vec<u8>) -> std::io::Result<()> {
 
 #[test]
 fn pkcs8_create_test_rsa() {
-    let der_orig = read_file("keys/rsa.pkcs8.der").unwrap();
+    let der_orig = match read_file("keys/rsa.pkcs8.der") {
+        Ok(data) => data,
+        Err(_) => panic!("Failed (Test): Read RSA key file")
+    };
 
     let version: u64 = 0;
     let modulus: Vec<u8> = vec![
@@ -95,7 +98,7 @@ fn pkcs8_create_test_rsa() {
 
     let der1 = match rsa_key_pkcs8_1.to_der() {
         Some(d) => d,
-        None => panic!("pkcs8_to_der() failed"),
+        None => panic!("Failed (Test): pkcs8_to_der()"),
     };
     // println!("\n> rsa key pkcs8:\n{}", der1.hex_dump());
     assert_eq!(der1, der_orig);
@@ -109,15 +112,18 @@ fn pkcs8_create_test_rsa() {
         build();
     
     let der2 = match rsa_key_pkcs8_2.to_der() {
-        Some(d) => d,
-        None => panic!("pkcs8_to_der() failed"),
+        Some(data) => data,
+        None => panic!("Failed (Test): pkcs8_to_der()"),
     };
     assert_eq!(der2, der_orig);
 }
 
 #[test]
 fn pkcs8_create_test_ec() {
-    let der_orig = read_file("keys/ec.pkcs8.der").unwrap();
+    let der_orig = match read_file("keys/ec.pkcs8.der") {
+        Ok(data) => data,
+        Err(_) => panic!("Failed (Test): Read key file")
+    };
 
     let version: u64 = 1;
     let priv_key: Vec<u8> = vec![
@@ -144,7 +150,7 @@ fn pkcs8_create_test_ec() {
 
     let der1 = match ec_key_pkcs8_1.to_der() {
         Some(d) => d,
-        None => panic!("pkcs8_to_der() failed"),
+        None => panic!("Failed (Test): pkcs8_to_der()"),
     };
     // println!("\n> ec key pkcs8:\n{}", der1.hex_dump());
 
@@ -160,7 +166,7 @@ fn pkcs8_create_test_ec() {
     
     let der2 = match ec_key_pkcs8_2.to_der() {
         Some(d) => d,
-        None => panic!("pkcs8_to_der() failed"),
+        None => panic!("Failed (Test): pkcs8_to_der()"),
     };
     assert_eq!(der2, der_orig);
 }

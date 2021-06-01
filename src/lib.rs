@@ -58,7 +58,7 @@ impl KeyPKCS8 {
 
         let mut key_pkcs8_full = Vec::new();
         key_pkcs8_full.push(ASN1Block::Sequence(0, key_pkcs8));
-        serialize(key_pkcs8_full.first().unwrap())
+        serialize(key_pkcs8_full.first()?)
     }
 }
 
@@ -105,9 +105,9 @@ impl KeyPKCS8Builder {
         key_asn1.push(ASN1Block::Integer(0, BigInt::from_signed_bytes_be(&exp2)));
         key_asn1.push(ASN1Block::Integer(0, BigInt::from_signed_bytes_be(&coef)));
 
-        match serialize(&ASN1Block::Sequence(0, key_asn1)) {
-            Some(key_der) => self.key = ASN1Block::OctetString(0, key_der),
-            None => println!("Failed: serialize RSA key")
+        match simple_asn1::to_der(&ASN1Block::Sequence(0, key_asn1)) {
+            Ok(key_der) => self.key = ASN1Block::OctetString(0, key_der),
+            Err(_) => println!("Failed: Serialize RSA key")
         };
 
         self
@@ -126,7 +126,7 @@ impl KeyPKCS8Builder {
 
         match simple_asn1::to_der(&ASN1Block::Sequence(0, key_asn1)) {
             Ok(key_der) => self.key = ASN1Block::OctetString(0, key_der),
-            Err(_) => println!("Failed: serialize EC key")
+            Err(_) => println!("Failed: Serialize EC key")
         };
 
         self
@@ -140,20 +140,26 @@ impl KeyPKCS8Builder {
     }
 
     pub fn from_der(mut self, der: &Vec<u8>) -> KeyPKCS8Builder {
-        let vec = deserialize(der).unwrap();
-        let pkcs8 = vec.get(0).unwrap();
+        let vec = match deserialize(der) {
+            Some(d) => d,
+            None => panic!("Failed: Deserialize provided key"),
+        };
+        let pkcs8 = match vec.get(0) {
+            Some(d) => d,
+            None => panic!("Failed: Deserialize provided key"),
+        };
 
         let version = match KeyPKCS8Builder::asn1_seq(pkcs8, 0) {
-            Some(c) => c,
-            None => panic!("Failed to get version"),
+            Some(d) => d,
+            None => panic!("Failed: Get version"),
         };
         let alg_id = match KeyPKCS8Builder::asn1_seq(pkcs8, 1) {
-            Some(c) => c,
-            None => panic!("Failed to get alg"),
+            Some(d) => d,
+            None => panic!("Failed: Get alg"),
         };
         let key = match KeyPKCS8Builder::asn1_seq(pkcs8, 2) {
-            Some(c) => c,
-            None => panic!("Failed to get alg"),
+            Some(d) => d,
+            None => panic!("Failed: Get key"),
         };
         self.version = version.clone();
         self.alg_id = alg_id.clone();
