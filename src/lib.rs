@@ -1,4 +1,5 @@
 use simple_asn1::{ASN1Block, ASN1Class, OID, BigInt, BigUint};
+use num_traits::cast::ToPrimitive;
 
 #[derive(Debug)]
 pub struct KeyPKCS8 {
@@ -48,8 +49,7 @@ impl KeyPKCS8 {
         sa
     }
 
-    pub fn to_der(self) -> Option<Vec<u8>>
-    {
+    pub fn to_der(self) -> Option<Vec<u8>> {
         let mut key_pkcs8 = Vec::new();
 
         key_pkcs8.push(self.version);
@@ -59,6 +59,56 @@ impl KeyPKCS8 {
         let mut key_pkcs8_full = Vec::new();
         key_pkcs8_full.push(ASN1Block::Sequence(0, key_pkcs8));
         serialize(key_pkcs8_full.first()?)
+    }
+
+    pub fn display(self) {
+        let ver = match self.version {
+            ASN1Block::Integer(_, d) => d.to_u64(),
+            _ => None,
+        };
+        match ver {
+            Some(version) => println!("\nVersion: {}", version),
+            None => { 
+                println!("\nFailed: Version data is in wrong format");
+                return;
+            },
+        };
+
+        let alg_seq_ = match self.alg_id {
+            ASN1Block::Sequence(_, d) => Some(d),
+            _ => None,
+        };
+        let alg_seq = match alg_seq_ {
+            Some(d) => d,
+            None => {
+                println!("\nFailed: Algorithm data is in wrong format");
+                return;
+            },
+        };
+
+        for i in alg_seq {
+            match i {
+                ASN1Block::ObjectIdentifier(_, o) => println!("\nAlgorithm: {:?}", o.as_vec().unwrap() as Vec<u64>),
+                ASN1Block::Null(_) => println!("\nNULL"),
+                _ => {
+                    println!("\nFailed: Algorithm data is in wrong format");
+                    return;
+                },
+            };
+        };
+
+        let oct_str_ = match self.key {
+            ASN1Block::OctetString(_, d) => Some(d),
+            _ => None,
+        };
+        let oct_str = match oct_str_ {
+            Some(d) => d,
+            None => {
+                println!("\nFailed: Key data is in wrong format");
+                return;
+            },
+        };
+        println!("\nVersion:\n {:?}", oct_str);
     }
 }
 
